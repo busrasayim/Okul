@@ -1,0 +1,59 @@
+﻿
+select{
+   width: 80px;
+}
+.uyeKonum select{
+   width: 180px;
+}
+.uyedef {
+    margin-bottom: 15px;
+}
+#UyeForm {
+    margin-left:2%;
+    width:45%;
+    float:left;
+    margin-top:20px;
+}
+#tbl_uyeForm {
+    margin-left:auto;
+    margin-right:auto;
+}
+#tbl_uyeForm td{
+    width:50px;
+
+}
+#UyeForm input[type="text"], #UyeForm input[type="password"]{
+    border: 1px solid #d6d4d4;
+}
+.textInput {
+  width: 280px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px;
+}
+.uyedef.dt{
+  font-size: 12px;
+  font-weight: 700;
+  margin: 5px 0;
+  clear: left;
+}
+.uyeKonum {
+  float: left;
+  margin-left:3%;
+  width: 45%;
+  margin-top:20px;
+}
+#kayitOlButton {
+    width:100px;
+    height:30px;
+    font-size:15px;
+    background-color:#358dd9;
+    color:white;
+    float:right;
+}
+    #kayitOlButton:hover {
+        cursor:pointer;
+        background-color: #fff;
+	    color:#000;
+    }
+

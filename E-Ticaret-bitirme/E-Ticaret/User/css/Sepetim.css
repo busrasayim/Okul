@@ -1,0 +1,99 @@
+﻿body {
+}
+#div_siparis {
+    width: 100%;
+    height: 100%;
+    background-color: #e3e6e9;
+    margin-top: 20px;
+    border: solid 1px;
+    color:#18116f;
+}
+#btn_Tamamla {
+    width:100%;
+    height:50px;
+    font-size:22px;
+    background-color:#314c5f;
+    color:white;
+}
+    #btn_Tamamla:hover {
+        background-color: #fff;
+	    color:#000;
+        cursor:pointer;
+    }
+#div_sepetim {
+    width:100%;
+    height:100%;
+    border:solid 1px;
+    margin-top:20px;
+}
+#tbl_sepet {
+    margin-top:20px;
+    width:100%;
+}
+    #tbl_sepet th {
+        color:#18116f;
+        font-size:20px;
+    }
+
+    #tbl_sepet td {
+        color:#18116f;
+        font-size:18px;
+        text-align:center;
+        border:solid 1px;
+        background-color:#d8e8f7;
+    }
+.tc_resim {
+    width:200px;
+    height:150px;
+}
+.sepetResim {
+    width:100%;
+    height:150px;
+    border:solid 1px;
+}
+
+.btn_sil {
+    width: 50px;
+    height: 50px;
+    background-color: #546b7c;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('../../image/sil_icon.png');
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+}
+    .btn_sil:hover{
+        background-color:#e9f2f3
+    }
+#btn_alisveriDevam {
+    float:right;
+    width:250px;
+    height:50px;
+    font-size:22px;
+    background-color:#314c5f;
+    color:white;
+}
+    #btn_alisveriDevam:hover {
+        background-color: #fff;
+	    color:#000;
+    }
+.sepetimMesaj {
+    text-align:center; 
+    width:800px;
+    height:150px;
+    position:relative;
+    margin:0 auto;
+    top:50%;
+    font-size:50px;
+    color:red;
+    padding-top:40px;
+}
+.tblIndirim {
+    margin-left:10px;
+    font-size:18px;
+}
+.urunAdet {
+    margin-left:10px;
+    font-size:18px;
+}

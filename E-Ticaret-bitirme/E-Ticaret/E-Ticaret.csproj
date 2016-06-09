@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36974809-84E1-4553-B6E3-4CEB276D3B4E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>E_Ticaret</RootNamespace>
+    <AssemblyName>E-Ticaret</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\45\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AltKategori.aspx" />
+    <Content Include="AnaSayfa.aspx" />
+    <Content Include="Css\jsCarousel.css" />
+    <Content Include="Css\reset.css" />
+    <Content Include="Css\style.css" />
+    <Content Include="db\script.sql" />
+    <Content Include="Global.asax" />
+    <Content Include="image\account.png" />
+    <Content Include="image\admin_icon.png" />
+    <Content Include="image\baslik-back.jpg" />
+    <Content Include="image\comment-png.png" />
+    <Content Include="image\kayitol_icon.png" />
+    <Content Include="image\login_icon.png" />
+    <Content Include="image\logo-back.jpg" />
+    <Content Include="image\logout_icon.png" />
+    <Content Include="image\Search.png" />
+    <Content Include="image\sepet_icon.png" />
+    <Content Include="image\sil_icon.png" />
+    <Content Include="image\web-site-back.jpg" />
+    <Content Include="image\yorum-icon.png" />
+    <Content Include="Js\main.js" />
+    <Content Include="Js\modernizr.js" />
+    <Content Include="User\css\Sepetim.css" />
+    <Content Include="User\css\AlisverisTamamla.css" />
+    <Content Include="User\Hesabim.aspx" />
+    <Content Include="User\Js\Sepetim.js" />
+    <Content Include="User\KargoSec.aspx" />
+    <Content Include="User\Odeme.aspx" />
+    <Content Include="User\Sepetim.aspx" />
+    <Content Include="User\SiparisTamamlandi.aspx" />
+    <Content Include="User\Teslimat.aspx" />
+    <Content Include="Yonetici\Css\KullaniciGuncelle.css" />
+    <Content Include="Css\Master.css" />
+    <Content Include="Css\AnaSayfa.css" />
+    <Content Include="Css\Urun.css" />
+    <Content Include="Css\UrunDetay.css" />
+    <Content Include="Yonetici\Css\UrunEkle.css" />
+    <Content Include="Css\UyeForm.css" />
+    <Content Include="Css\UyeGiris.css" />
+    <Content Include="Yonetici\Css\Yonetici.css" />
+    <Content Include="image\bos_star.png" />
+    <Content Include="image\left_arrow.jpg" />
+    <Content Include="image\logo_e-ticaret.png" />
+    <Content Include="image\pc.jpg" />
+    <Content Include="image\right_arrow.jpg" />
+    <Content Include="image\sari_yuvarlak.png" />
+    <Content Include="image\dolu_star.png" />
+    <Content Include="image\sepeteekle.png" />
+    <Content Include="Yonetici\image\account_icon.png" />
+    <Content Include="Yonetici\image\sepet.png" />
+    <Content Include="Yonetici\image\takvim.png" />
+    <Content Include="Js\jquery-2.1.3.min.js" />
+    <Content Include="Js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Js\jsCarousel.js" />
+    <Content Include="Yonetici\image\logo_e-ticaret.png" />
+    <Content Include="Yonetici\Js\jquery-2.1.3.min.js" />
+    <Content Include="Yonetici\Js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Yonetici\Js\KullaniciGuncelle.js" />
+    <Content Include="Js\Urun.js" />
+    <Content Include="Js\UrunDetay.js" />
+    <Content Include="Yonetici\Js\UrunEkle.js" />
+    <Content Include="Js\UyeGiris.js" />
+    <Content Include="Yonetici\KullaniciGuncelle.aspx" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="ResimYolla.ashx" />
+    <Content Include="less\style.less" />
+    <Content Include="User\Web.config" />
+    <Content Include="EticaretDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>EticaretDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Urun.aspx" />
+    <Content Include="UrunDetay.aspx" />
+    <Content Include="Yonetici\UrunKayit.aspx" />
+    <Content Include="UyeGiris.aspx" />
+    <Content Include="Yonetici\YöneticiSayfa.Master" />
+    <Content Include="Yonetici\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UyeOl.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AltKategori.aspx.cs">
+      <DependentUpon>AltKategori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltKategori.aspx.designer.cs">
+      <DependentUpon>AltKategori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnaSayfa.aspx.cs">
+      <DependentUpon>AnaSayfa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnaSayfa.aspx.designer.cs">
+      <DependentUpon>AnaSayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlFinder.cs" />
+    <Compile Include="EticaretDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EticaretDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="User\DayNameFormatInfo.cs" />
+    <Compile Include="User\Hesabim.aspx.cs">
+      <DependentUpon>Hesabim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Hesabim.aspx.designer.cs">
+      <DependentUpon>Hesabim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\KargoSec.aspx.cs">
+      <DependentUpon>KargoSec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\KargoSec.aspx.designer.cs">
+      <DependentUpon>KargoSec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Odeme.aspx.cs">
+      <DependentUpon>Odeme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Odeme.aspx.designer.cs">
+      <DependentUpon>Odeme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Sepetim.aspx.cs">
+      <DependentUpon>Sepetim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Sepetim.aspx.designer.cs">
+      <DependentUpon>Sepetim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SiparisTamamlandi.aspx.cs">
+      <DependentUpon>SiparisTamamlandi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SiparisTamamlandi.aspx.designer.cs">
+      <DependentUpon>SiparisTamamlandi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Teslimat.aspx.cs">
+      <DependentUpon>Teslimat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Teslimat.aspx.designer.cs">
+      <DependentUpon>Teslimat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yonetici\KullaniciGuncelle.aspx.cs">
+      <DependentUpon>KullaniciGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yonetici\KullaniciGuncelle.aspx.designer.cs">
+      <DependentUpon>KullaniciGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResimYolla.ashx.cs">
+      <DependentUpon>ResimYolla.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Urun.aspx.cs">
+      <DependentUpon>Urun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Urun.aspx.designer.cs">
+      <DependentUpon>Urun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UrunDetay.aspx.cs">
+      <DependentUpon>UrunDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UrunDetay.aspx.designer.cs">
+      <DependentUpon>UrunDetay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yonetici\UrunKayit.aspx.cs">
+      <DependentUpon>UrunKayit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yonetici\UrunKayit.aspx.designer.cs">
+      <DependentUpon>UrunKayit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UyeGiris.aspx.cs">
+      <DependentUpon>UyeGiris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UyeGiris.aspx.designer.cs">
+      <DependentUpon>UyeGiris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UyeOl.aspx.cs">
+      <DependentUpon>UyeOl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UyeOl.aspx.designer.cs">
+      <DependentUpon>UyeOl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yonetici\YöneticiSayfa.Master.cs">
+      <DependentUpon>YöneticiSayfa.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yonetici\YöneticiSayfa.Master.designer.cs">
+      <DependentUpon>YöneticiSayfa.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EticaretDB.dbml.layout">
+      <DependentUpon>EticaretDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59943</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59943/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

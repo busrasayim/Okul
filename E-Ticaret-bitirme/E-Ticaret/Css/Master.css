@@ -1,0 +1,263 @@
+﻿body {
+}
+#lbl_kullaniciRol {
+    font-size:18px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style:italic;
+    margin-left:20px;
+}
+#logo_secenek {
+    width:15%;
+    height:100%;
+    float:left;
+}
+#logo {
+    width: 100%;
+    height: 220px;
+    background-image: url('../image/logo-back.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 220px;
+    cursor: pointer;
+}
+#logo_baslik {
+    font-size:30px;
+    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-weight:700;
+    text-align:center;
+    padding-top:20px;
+    color:red;
+}
+#secenek {
+    width:100%;
+    height:100%;
+    background-color:#e3e6e9;
+}
+#baslik_vitrin {
+    width:84%;
+    height:100%;
+    margin-left:1%;
+    float:left;
+}
+#baslik {
+    width: 100%;
+    height: 220px;
+    background-color: #677d8d;
+    background-repeat: no-repeat;
+    background-image: url('../image/baslik-back.jpg');
+    background-size:100% 220px;
+}
+#vitrin {
+    width:100%;
+    height:100%;
+}
+.arama {
+    border:solid 1px;
+    width:50%;
+    height:40%;
+    margin-left:20px;
+    margin-top:30px;
+    background-color:white;
+    float:left;
+}
+.div_araButon{
+    width:19%;
+    height:45px;
+    float:right;
+    background-color:#314c5f;
+    text-align:center;
+    color: #FFFFFF;
+    border-left:solid 1px;
+}
+#btn_ara {
+    width: 100%;
+    height: 44px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-image: url('../image/Search.png');
+    background-size: 100% 44px;
+}
+
+#div_textAra {
+    float:left;
+    width:80%;
+    height:93%;
+}
+#input_ara {
+    height:35px;
+    width:100%;
+    border:none;
+    box-shadow:none;
+    outline:0;
+    padding-left:10px;
+    font-size:13px;
+}
+
+
+#div_kullaniciIsllem {
+    float:left;
+    width:25%;
+    height:40%;
+    margin-left: 5%;
+    margin-top:30px;
+}
+#div_hesap {
+    float: left;
+    width: 33%;
+    height: 45px;
+    background-color:#314c5f;;
+}
+#btn_hesap {
+    width: 100%;
+    height: 44px;
+    cursor: pointer;
+    color:white;
+    text-align:right;
+    font-size:15px;
+    background-repeat: no-repeat;
+    background-color: #314c5f;
+    background-image: url('../image/account.png');
+    background-size: 42% 44px;
+}
+    #btn_hesap:hover {
+        background-color: #fff;
+	    color:#000;
+    }
+#div_sepet {
+    float: left;
+    width: 33%;
+    height: 45px;
+    background-color:#314c5f;
+    color: #FFFFFF;
+}
+#btn_sepet {
+    width: 100%;
+    height: 44px;
+    cursor: pointer;
+    color: white;
+    text-align: right;
+    font-size: 15px;
+    background-repeat: no-repeat;
+    background-color: #314c5f;
+    background-image: url('../image/sepet_icon.png');
+    background-size: 42% 44px;
+}
+    #btn_sepet:hover {
+        background-color: #fff;
+	    color:#000;
+    }
+#div_yonetici {
+    float: left;
+    width: 33%;
+    height: 45px;
+    background-color:#314c5f;
+    color: #FFFFFF;
+}
+#btn_yonetici {
+    width: 100%;
+    height: 44px;
+    cursor: pointer;
+    color: white;
+    text-align: right;
+    font-size: 15px;
+    background-repeat: no-repeat;
+    background-color: #314c5f;
+    background-image: url('../image/admin_icon.png');
+    background-size: 42% 44px;
+}
+    #btn_yonetici:hover {
+        background-color: #fff;
+	    color:#000;
+    }
+
+#div_girisCikis {
+    float:right;
+    width:15%;
+    height:40%;
+    margin-right:2%;
+    margin-top:30px;
+}
+#div_giris{
+    float: left;
+    width: 49%;
+    height: 45px;
+    background-color:#314c5f;
+    border-right:solid 2px;
+    color: #FFFFFF;
+}
+.btn_giris {
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    background-color: #314c5f;
+    background-image: url('../image/login_icon.png');
+    background-repeat: no-repeat;
+    background-size: 100% 45px;
+}
+.btn_cikis {
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    background-color: #314c5f;
+    background-image: url('../image/logout_icon.png');
+    background-repeat: no-repeat;
+    background-size: 100% 45px;
+}
+#div_kayit{
+    float: left;
+    width: 49%;
+    height: 45px;
+    background-color:#314c5f;
+    color: #FFFFFF;
+    cursor:pointer;
+}
+#btn_kayit {
+    width: 100%;
+    height: 44px;
+    cursor: pointer;
+    color: white;
+    text-align: right;
+    font-size: 15px;
+    background-repeat: no-repeat;
+    background-color: #314c5f;
+    background-image: url('../image/kayitol_icon.png');
+    background-size: 42% 44px;
+}
+    #btn_kayit:hover {
+        background-color: #fff;
+	    color:#000;
+    }
+
+
+#ul_menu {
+   margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#ul_menu li {
+	float: left;
+	width: 20%;
+	position: relative;
+    margin-top:30px;
+}
+#ul_menu a {
+	font-family: Arial;
+	font-size: 20px;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #314c5f;
+	display: block;
+	padding-top: 5px;
+	padding-right: 5px;
+	border: 1px solid #9fb2bc;
+	text-align: center;
+	line-height: 50px;
+	margin-right: 2px;
+	border-radius:5px;
+}
+#ul_menu a:hover {
+	background-color: #fff;
+	color:#000;
+}
+
+

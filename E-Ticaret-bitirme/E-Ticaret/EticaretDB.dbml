@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="E-TicaretDB" Class="EticaretDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=E-TicaretDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="E_TicaretDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Adresler" Member="Adreslers">
+    <Type Name="Adresler">
+      <Column Name="AdresID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdesAd" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AdresTarif" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SehirID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KullaniciID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Adresler_Sipari" Member="Siparis" ThisKey="AdresID" OtherKey="FaturaAdresID" Type="Siparis" />
+      <Association Name="Adresler_Sipari1" Member="Siparis1" ThisKey="AdresID" OtherKey="TeslimatAdresID" Type="Siparis" />
+      <Association Name="Kullanici_Adresler" Member="Kullanici" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Kullanici" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Sehir_Adresler" Member="Sehir" ThisKey="SehirID" OtherKey="SehirID" Type="Sehir" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alt_Kategori" Member="Alt_Kategoris">
+    <Type Name="Alt_Kategori">
+      <Column Name="AltKategoriID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AltKategoriAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tanimi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KategoriID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alt_Kategori_AltKategoriOzellik" Member="AltKategoriOzelliks" ThisKey="AltKategoriID" OtherKey="AltKategoriID" Type="AltKategoriOzellik" />
+      <Association Name="Kategori_Alt_Kategori" Member="Kategori" ThisKey="KategoriID" OtherKey="KategoriID" Type="Kategori" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AltKategoriOzellik" Member="AltKategoriOzelliks">
+    <Type Name="AltKategoriOzellik">
+      <Column Name="AltKategoriOzellikID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AltKategoriID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OzellikID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AltKategoriOzellik_OzellikDeger" Member="OzellikDegers" ThisKey="AltKategoriOzellikID" OtherKey="AltKategoriOzellikID" Type="OzellikDeger" />
+      <Association Name="Alt_Kategori_AltKategoriOzellik" Member="Alt_Kategori" ThisKey="AltKategoriID" OtherKey="AltKategoriID" Type="Alt_Kategori" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Ozellik_AltKategoriOzellik" Member="Ozellik" ThisKey="OzellikID" OtherKey="OzellikID" Type="Ozellik" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kargo" Member="Kargos">
+    <Type Name="Kargo">
+      <Column Name="KargoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KargoAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="KargoAciklama" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="KargoFiyat" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Kargo_Sipari" Member="Siparis" ThisKey="KargoID" OtherKey="KargoID" Type="Siparis" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kategori" Member="Kategoris">
+    <Type Name="Kategori">
+      <Column Name="KategoriID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KategoriAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tanimi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Kategori_Alt_Kategori" Member="Alt_Kategoris" ThisKey="KategoriID" OtherKey="KategoriID" Type="Alt_Kategori" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kullanici" Member="Kullanicis">
+    <Type Name="Kullanici">
+      <Column Name="KullaniciID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ad" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Soyad" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="EPosta" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Parola" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="KayitTarih" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RolID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KullaniciAd" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cinsiyet" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="DogumTarih" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="UlkeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SehirID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Kullanici_Adresler" Member="Adreslers" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Adresler" />
+      <Association Name="Kullanici_Sepet" Member="Sepets" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Sepet" />
+      <Association Name="Kullanici_Yorumlar" Member="Yorumlars" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Yorumlar" />
+      <Association Name="Kullanici_Sipari" Member="Siparis" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Siparis" />
+      <Association Name="Rol_Kullanici" Member="Rol" ThisKey="RolID" OtherKey="RolID" Type="Rol" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Sehir_Kullanici" Member="Sehir" ThisKey="SehirID" OtherKey="SehirID" Type="Sehir" IsForeignKey="true" />
+      <Association Name="Ulke_Kullanici" Member="Ulke" ThisKey="UlkeID" OtherKey="UlkeID" Type="Ulke" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ozellik" Member="Ozelliks">
+    <Type Name="Ozellik">
+      <Column Name="OzellikID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OzellikAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Ozellik_AltKategoriOzellik" Member="AltKategoriOzelliks" ThisKey="OzellikID" OtherKey="OzellikID" Type="AltKategoriOzellik" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OzellikDeger" Member="OzellikDegers">
+    <Type Name="OzellikDeger">
+      <Column Name="OzellikDegerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AltKategoriOzellikID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Deger" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="OzellikDeger_UrunOzellikDeger" Member="UrunOzellikDegers" ThisKey="OzellikDegerID" OtherKey="OzellikDegerID" Type="UrunOzellikDeger" />
+      <Association Name="AltKategoriOzellik_OzellikDeger" Member="AltKategoriOzellik" ThisKey="AltKategoriOzellikID" OtherKey="AltKategoriOzellikID" Type="AltKategoriOzellik" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resimler" Member="Resimlers">
+    <Type Name="Resimler">
+      <Column Name="ResimID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Data" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UrunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Urun_Resimler" Member="Urun" ThisKey="UrunID" OtherKey="UrunID" Type="Urun" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rol" Member="Rols">
+    <Type Name="Rol">
+      <Column Name="RolID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RolTipi" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Rol_Kullanici" Member="Kullanicis" ThisKey="RolID" OtherKey="RolID" Type="Kullanici" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sehir" Member="Sehirs">
+    <Type Name="Sehir">
+      <Column Name="SehirID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SehirAd" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UlkeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Sehir_Adresler" Member="Adreslers" ThisKey="SehirID" OtherKey="SehirID" Type="Adresler" />
+      <Association Name="Sehir_Kullanici" Member="Kullanicis" ThisKey="SehirID" OtherKey="SehirID" Type="Kullanici" />
+      <Association Name="Ulke_Sehir" Member="Ulke" ThisKey="UlkeID" OtherKey="UlkeID" Type="Ulke" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sepet" Member="Sepets">
+    <Type Name="Sepet">
+      <Column Name="SepetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KullaniciID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fiyat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Durum" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Sepet_SepetUrun" Member="SepetUruns" ThisKey="SepetID" OtherKey="SepetID" Type="SepetUrun" />
+      <Association Name="Kullanici_Sepet" Member="Kullanici" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Kullanici" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SepetUrun" Member="SepetUruns">
+    <Type Name="SepetUrun">
+      <Column Name="SepetUrunID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SepetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UrunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UrunAdet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Sepet_SepetUrun" Member="Sepet" ThisKey="SepetID" OtherKey="SepetID" Type="Sepet" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Urun_SepetUrun" Member="Urun" ThisKey="UrunID" OtherKey="UrunID" Type="Urun" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisUrun" Member="SiparisUruns">
+    <Type Name="SiparisUrun">
+      <Column Name="SiparisUrun" Member="SiparisUrun1" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UrunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Urun_SiparisUrun" Member="Urun" ThisKey="UrunID" OtherKey="UrunID" Type="Urun" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Sipari_SiparisUrun" Member="Siparis" ThisKey="SiparisID" OtherKey="SiparisID" Type="Siparis" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ulke" Member="Ulkes">
+    <Type Name="Ulke">
+      <Column Name="UlkeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UlkeAd" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Ulke_Kullanici" Member="Kullanicis" ThisKey="UlkeID" OtherKey="UlkeID" Type="Kullanici" />
+      <Association Name="Ulke_Sehir" Member="Sehirs" ThisKey="UlkeID" OtherKey="UlkeID" Type="Sehir" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Urun" Member="Uruns">
+    <Type Name="Urun">
+      <Column Name="UrunID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UrunAdi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tanimi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Stok" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fiyat" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Indirim" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AltKategori" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Urun_Resimler" Member="Resimlers" ThisKey="UrunID" OtherKey="UrunID" Type="Resimler" />
+      <Association Name="Urun_SepetUrun" Member="SepetUruns" ThisKey="UrunID" OtherKey="UrunID" Type="SepetUrun" />
+      <Association Name="Urun_SiparisUrun" Member="SiparisUruns" ThisKey="UrunID" OtherKey="UrunID" Type="SiparisUrun" />
+      <Association Name="Urun_UrunOylama" Member="UrunOylamas" ThisKey="UrunID" OtherKey="UrunID" Type="UrunOylama" />
+      <Association Name="Urun_UrunOzellikDeger" Member="UrunOzellikDegers" ThisKey="UrunID" OtherKey="UrunID" Type="UrunOzellikDeger" />
+      <Association Name="Urun_Yorumlar" Member="Yorumlars" ThisKey="UrunID" OtherKey="UrunID" Type="Yorumlar" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UrunOylama" Member="UrunOylamas">
+    <Type Name="UrunOylama">
+      <Column Name="UrunOylamaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BirYildiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="İkiYildiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UcYildiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DortYildiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BesYildiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UrunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Urun_UrunOylama" Member="Urun" ThisKey="UrunID" OtherKey="UrunID" Type="Urun" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UrunOzellikDeger" Member="UrunOzellikDegers">
+    <Type Name="UrunOzellikDeger">
+      <Column Name="UrunOzellikDeger" Member="UrunOzellikDeger1" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OzellikDegerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UrunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="OzellikDeger_UrunOzellikDeger" Member="OzellikDeger" ThisKey="OzellikDegerID" OtherKey="OzellikDegerID" Type="OzellikDeger" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Urun_UrunOzellikDeger" Member="Urun" ThisKey="UrunID" OtherKey="UrunID" Type="Urun" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Yorumlar" Member="Yorumlars">
+    <Type Name="Yorumlar">
+      <Column Name="YorumID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="YorumBaslik" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Yorum" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="KullaniciID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UrunID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YorumTarih" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Kullanici_Yorumlar" Member="Kullanici" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Kullanici" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Urun_Yorumlar" Member="Urun" ThisKey="UrunID" OtherKey="UrunID" Type="Urun" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Siparis" Member="Siparis">
+    <Type Name="Siparis">
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KullaniciID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KargoID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FaturaAdresID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeslimatAdresID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Sipari_SiparisUrun" Member="SiparisUruns" ThisKey="SiparisID" OtherKey="SiparisID" Type="SiparisUrun" />
+      <Association Name="Adresler_Sipari" Member="Adresler" ThisKey="FaturaAdresID" OtherKey="AdresID" Type="Adresler" IsForeignKey="true" />
+      <Association Name="Adresler_Sipari1" Member="Adresler1" ThisKey="TeslimatAdresID" OtherKey="AdresID" Type="Adresler" IsForeignKey="true" />
+      <Association Name="Kargo_Sipari" Member="Kargo" ThisKey="KargoID" OtherKey="KargoID" Type="Kargo" IsForeignKey="true" />
+      <Association Name="Kullanici_Sipari" Member="Kullanici" ThisKey="KullaniciID" OtherKey="KullaniciID" Type="Kullanici" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="MasterPage.master.cs" Inherits="E_Ticaret.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style=" background-image: url('../../image/web-site-back.jpg');background-size:100% 2000px;">
+<head runat="server">
+    <title>E-Ticaret</title>
+    <script src='<%= ResolveUrl("Js/jquery-2.1.3.min.js") %>'></script>
+    <script src='<%= ResolveUrl("Js/jquery-migrate-1.2.1.min.js") %>'></script>
+    <script src="Js/Urun.js"></script>
+    <script src='<%= ResolveUrl("User/Js/Sepetim.js") %>'></script>
+    <link href="Css/Master.css" rel="stylesheet" />
+    <link href="Css/AnaSayfa.css" rel="stylesheet"/>
+    <link href="Css/Urun.css" rel="stylesheet" />
+    <link href="User/css/Sepetim.css" rel="stylesheet" />
+    <link href="User/css/AlisverisTamamla.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".urunCell").click(function () {
+                var urunID = $(this).attr("id");
+                window.location = "UrunDetay.aspx?urunID=" + urunID;
+            });
+        });
+      </script>
+</head>
+<body>
+    <div style="margin-left:auto;margin-right:auto;width:90%;height:100%">
+        <form id="form1" runat="server">
+                <div id="logo_secenek">
+                    <div id="logo"  onclick="location.href='<%= ResolveUrl("AnaSayfa.aspx") %>'">
+                        <div id="logo_baslik" style="width:100%;height:50px"><span>E-TİCARET</span></div>
+                        <div style="width:100%;height:150px;"><img src='<%= ResolveUrl("image/logo_e-ticaret.png") %>'   style="width:100%;height:150px"/></div>            
+                    </div>
+                    <div id="secenek">
+                        <asp:ContentPlaceHolder ID="SecenekIcerik" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div id="baslik_vitrin">
+                    <div id="baslik">
+                        <div style="width:100%;height:50%">
+                            <div class="arama">
+                                <div id="div_textAra"><input id="input_ara" type="text"></div>
+                                <div class="div_araButon"><asp:Button ID="btn_ara" runat="server"/></div>
+                            </div>
+
+                            <div id="div_kullaniciIsllem">
+                                <div id="div_hesap">                  
+                                    <asp:Button ID="btn_hesap" Text="Hesabım" runat="server" OnClick="btn_hesap_Click" />
+                                </div>
+                                <div id="div_sepet">
+                                    <asp:Button ID="btn_sepet" Text="Sepetim" runat="server" OnClick="btn_sepet_Click" />
+                                </div>
+                                <asp:Panel ID="div_yonetici" runat="server">
+                                    <asp:Button ID="btn_yonetici" runat="server" Text="Yönetici" OnClick="btn_yonetici_Click" />
+                                </asp:Panel>
+                            </div>
+
+                            <div id="div_girisCikis">
+                                <div id="div_giris">
+                                    <asp:Button ID="Giris" CssClass="btn_giris" runat="server" OnClick="Giris_Click"/>
+                                    <asp:Button ID="Cikis" CssClass="btn_cikis" runat="server" OnClick="Cikis_Click" />
+                                </div>
+                                 <div id="div_kayit">
+                                     <asp:Button ID="btn_kayit" Text="Kayıt Ol" runat="server" OnClick="btn_kayit_Click"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:100%;height:50%">
+                            <asp:Label ID="lbl_kullaniciRol" runat="server" Text=""></asp:Label>
+                            <ul id="ul_menu">
+                                <li><a>Markalar</a></li>
+                                <li><a>En Çok Satanlar</a></li>
+                                <li><a>İndirimde Olanlar</a></li>
+                                <li><a>En Çok Yorum Alanlar</a></li>
+                                <li><a>En Yeniler</a></li>
+                            </ul>        
+                        </div>
+                    </div>
+
+                    <div id="vitrin">
+                        <asp:ContentPlaceHolder ID="VitrinIcerik" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                </div>
+            </form>
+    </div>
+    
+</body>
+</html>

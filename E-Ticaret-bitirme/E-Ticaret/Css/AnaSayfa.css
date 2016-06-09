@@ -1,0 +1,91 @@
+﻿.cssTable {
+    width:100%;
+    height:100%;
+    border: 1px solid;
+}
+.cssTable td {
+    background-color: #fdffdb;
+    height:270px;
+    border:solid 1px;
+    vertical-align:top;
+    text-align:center;
+    cursor:pointer;
+}
+.cssTable td:hover {
+    background-color:#f3f898;
+}
+.txt_urunAdi {
+    font:bold 20px Times New Roman, Times, sans-serif;
+}
+.txt_urunTanimi {
+    font: 13px Verdana, Geneva, sans-serif;
+}
+.txt_urunFiyat {
+    font:bold 20px Times New Roman, Times, sans-serif;
+    color:#a91f1f;
+}
+.div_image {
+    width:80%;
+    height:50%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+    background-color:aqua;
+}
+.div_indirim {
+    width: 65px;
+    height: 65px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: right;
+    background-image: url("../image/sari_yuvarlak.png");
+}
+.menum {
+    text-align:center;
+}
+.menum ul{
+	margin:0;/*UL çerçevesinin dışından boşluğunu yok eder.*/
+	padding:0;/*UL çerçevesinin içerden boşluğunu yok eder.*/
+	list-style:none;/*Lİ'lerin kenarlarındaki stili(örneğin yuvarlak gibi) kaldırır.*/
+	width:100%;/*UL'nin genişliğini 150px olarak ayarlar*/
+	border-bottom:1px solid #000;/*UL'nin sadece alt kenar özelliğini belirler.*/
+    height:50px;
+}
+.li_yanMenu{
+	position:relative;/*Katmanın yerinin bir önceki katman esas alınarak belirlenmesini sağlar. Burada Lİ özelliği UL'yi esas alarak yerini belirler.*/
+    height:50px
+}
+.li_yanMenu ul{/*menum'ün içindeki Lİ'nin içindeki UL için class tanımlaması*/
+	position:absolute;/*Katmanın yerini esas pencere olarak alır. Yani yeri nere ise orada konumlanır.*/
+	list-style:none;/*Lİ'lerin kenarlarındaki stili(örneğin yuvarlak gibi) kaldırır.*/
+	left:100%;/*Soldan 149 px boşluk bırakır. 1px az olmasının sebebi border'dandır.*/
+	width:100%;/*Lİ'nin içerisindeki UL'nin genişliği 150 px yapılır.*/
+	display:none;/*menu->li->ul sayfa açıldığında gözükmesini engeller.*/
+	top:0;/*Yukarıdan boşluğu siler*/
+}
+.li_yanMenu a{/*menu->li->a yani menu'nun içindeki linklere stil verilir*/
+	display:block;/*Linkler alt alta gösterilir*/
+	text-decoration:none;/*Linklerin alt çizgisi kaldırılır*/
+	background-color:#314c5f;/*Linkelere arka plan rengi verilir*/
+	color: #FFFFFF;/*Linklerin yazı rengi siyah olarak ayarlanır*/
+	font:bold 13px Verdana, Geneva, sans-serif;/*Font özellikleri verilir*/
+	padding:20px;/*Linklerin çerçevenin içinden boşluğu 5px olarak ayarlanır*/
+	border:1px solid #000;/*Linkelere çerçeve özelliği verilir*/
+	border-bottom:solid 2px;/*Linklerin alt çerçevesi kaldırılır*/
+}
+.li_yanMenu a:hover{/*menu'nun içindeki Lİ'nin içindeki linkerin üzerine gelindiğinde uygulanacak stiller*/
+	background-color: #fff;
+	color:#000;
+}
+.li_yanMenu:hover ul{/*Menu'nun içindeki ana Lİ'lerin üzerine gelince alt menüsü (yani UL'si) varsa göstermesi için stil uygulanır*/
+	display:block;/*Menu'nun içindeki Lİ'nin içindeki alt menu olarak olan li->ul lerin alt menüsü varsa onların açılmasını sağlar*/
+}
+/*ie 7 ve altındaki tarayıcı uyumsuzluklarını gidermek için bu kodları kullandık*/
+* html ul li{
+float:left;
+height:1%;
+}
+* html ul li a{
+height:1%;
+}
+
